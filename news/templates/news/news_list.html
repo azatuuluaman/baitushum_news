@@ -1,0 +1,23 @@
+
+{% extends 'news/base.html'%} {# добавив extends в начало файла, мы связываем два шаблона друг с другом, ведь именно для этого нужно расширение #}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h1><a href="">{{ post.title }}</a></h1>
+
+            <h1> {{ post.subtitle }}</h1>
+
+            <h1> {{ post.category }}</h1>
+{#            {% for j in post.category.all %}#}
+{#                <h1> {{ j.title }}</h1>#}
+{#            {% endfor %}#}
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>      {{ image.name }}
+                    <img src="{{ post.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;"/>
+                </p>
+                </div>
+
+    {% endfor %}
+{% endblock %}
+

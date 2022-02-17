@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <title> Category</title> {# Название окна #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  {# Меняем шрифт #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> {# Меняем шрифт #}
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='st   ylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'category.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/"> Категории </a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% for category in posts %}
+                    <div class="post">
+                        <h1><a href="{% url 'news_list' pk=category.id %}">{{ category.title }}</a></h1> {# Здесь кнопки категории стали кликабельными. внутри сслыки #}
+                        <p>{{ category.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
