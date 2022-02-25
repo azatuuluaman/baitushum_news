@@ -9,4 +9,5 @@ class News(models.Model):
     category = models.ForeignKey( Category , on_delete=models.CASCADE , null=True)
     # category = models.ManyToManyField( Category )
     image = models.ImageField(upload_to='images/', null=True)
+    published_date = models.TimeField(blank=True, null=True)
 

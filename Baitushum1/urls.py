@@ -11,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
     path('category/', include('category.urls')),
+    path('bootstrap/', include('news.urls')),
 ]
 
 if settings.DEBUG:
